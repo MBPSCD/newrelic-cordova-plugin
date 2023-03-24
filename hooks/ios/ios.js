@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022-present New Relic Corporation. All rights reserved.
+ * SPDX-License-Identifier: Apache-2.0 
+ */
+
 /** @module iOS */
 var fs = require("fs");
 var path = require("path");
@@ -187,7 +192,7 @@ module.exports = {
   /**
    * Return {boolean} - if this platform exists and has been configured with an application token
    */
-  isPlatformConfigured: function() {
+  isPlatformConfigured: function () {
     var config = newrelic.getIosConfig();
     return newrelic.isPlatformConfigured(config);
   },

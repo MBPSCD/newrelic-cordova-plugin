@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022-present New Relic Corporation. All rights reserved.
+ * SPDX-License-Identifier: Apache-2.0 
+ */
+
 /** @module Android */
 var path = require("path");
 var newrelic = require("../newrelic");
@@ -28,9 +33,9 @@ module.exports = {
   /**
    * Agent build extension
    */
-  nrTag: "\n// NEWRELIC ADDED\n" 
+  nrTag: "\n// NEWRELIC ADDED\n"
     + "buildscript {\n\tdependencies {\n\t\tclasspath 'com.newrelic.agent.android:agent-gradle-plugin:{AGENT_VER}'\n\t}\n}\n"
-    + "dependencies {\n\tcompile ('com.newrelic.agent.android:android-agent:{AGENT_VER}')\n}\n"
+    + "dependencies {\n\timplementation ('com.newrelic.agent.android:android-agent:{AGENT_VER}')\n}\n"
     + "{PLUGIN}"
     + "// NEWRELIC ADDED\n",
 
@@ -85,7 +90,7 @@ module.exports = {
   /**
    * Return {boolean} - if this platform exists and has been configured with an application token
    */
-  isPlatformConfigured: function() {
+  isPlatformConfigured: function () {
     var config = newrelic.getAndroidConfig();
     return newrelic.isPlatformConfigured(config);
   },
