@@ -1,10 +1,11 @@
 {
   "name": "newrelic-cordova-plugin",
-  "version": "5.0.0",
+  "version": "6.1.0",
   "description": "New Relic Cordova Plugin for iOS and Android",
   "repo": "https://github.com/newrelic/newrelic-cordova-plugin/",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha tests/installation",
+    "test:ios": "cordova-paramedic --cleanUpAfterRun --verbose --platform ios --plugin ."
   },
   "keywords": [
     "cordova",
@@ -16,8 +17,12 @@
   "author": "New Relic",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.2.0",
-    "shelljs": "^0.7.6",
+    "cordova-paramedic": "github:apache/cordova-paramedic",
+    "mocha": "^10.2.0",
+    "prettier": "2.7.1",
+    "shelljs": "^0.8.5",
     "xcode": "^2.0.0"
+  },
+  "dependencies": {
   }
 }
